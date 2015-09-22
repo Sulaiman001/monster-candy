@@ -55,7 +55,7 @@ window.addEventListener("load", function () {
     //draw
     var draw = function () {
         ctx.clearRect(0, 0, GAME_HEIGHT, GAME_WIDTH);
-        ctx.fillStyle = ("#f00");
+        ctx.fillStyle = ("#1C2326");
 
         enemies.forEach(function (element, index) {
             ctx.fillRect(element.x, element.y, element.w, element.h);
