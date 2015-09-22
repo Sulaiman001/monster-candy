@@ -1,8 +1,8 @@
 window.addEventListener("load", function () {
 
     //define constants
-    var GAME_WIDTH = 640;
-    var GAME_HEIGHT = 360;
+    var GAME_WIDTH = 960;
+    var GAME_HEIGHT = 640;
 
     //grab the canvas and context
     var canvas = document.getElementById("myCanvas");
@@ -44,7 +44,13 @@ window.addEventListener("load", function () {
         ]
 
     //update the logic
-    var update = function () {};
+    var update = function () {
+
+        enemies.forEach(function (element, index) {
+            element.y += element.speedY;
+        });
+
+    };
 
     //draw
     var draw = function () {
@@ -59,7 +65,7 @@ window.addEventListener("load", function () {
     //gets executed multiple times per second
     var step = function () {
 
-        // update();
+        update();
         draw();
 
         if (gameLive) {
