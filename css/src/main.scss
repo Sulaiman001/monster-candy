@@ -1,0 +1,26 @@
+// Load base dependencies
+@import "bower_components/fontawesome/scss/font-awesome.scss";   
+
+// Load modules
+@import "modules/colours";
+@import "modules/common";
+
+// Load partials
+@import "partials/typography";
+
+// Load vendor plugins
+//@import "path-to-vendor-plugins"
+
+
+/* Base styles
+   ========================================================================== */
+
+canvas {
+    border: 1px solid #000;
+    width: 100%;
+}
+
+footer {
+    margin-top: 2em;
+    padding: 1em;
+}
