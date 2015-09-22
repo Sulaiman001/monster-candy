@@ -10,8 +10,22 @@
 /* Base styles
    ========================================================================== */
 
+body {
+    background: $blue;
+}
+
+header {
+    padding: 2em 0;
+}
+
 canvas {
-    border: 1px solid #000;
+    border: 1px solid $yellow;
+    background: #fff;
+}
+
+main .row {
+    text-align: center;
+    padding: 3em 0;
 }
 
 footer {

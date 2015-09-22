@@ -1789,10 +1789,24 @@
 .fa-medium:before {
   content: ""; }
 
+h1 {
+  color: #E8E758; }
+
 /* Base styles
    ========================================================================== */
+body {
+  background: #58D4E8; }
+
+header {
+  padding: 2em 0; }
+
 canvas {
-  border: 1px solid #000; }
+  border: 1px solid #E8E758;
+  background: #fff; }
+
+main .row {
+  text-align: center;
+  padding: 3em 0; }
 
 footer {
   margin-top: 2em;
