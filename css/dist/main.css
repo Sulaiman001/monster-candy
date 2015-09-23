@@ -1792,6 +1792,12 @@
 h1 {
   color: #eceb76; }
 
+h3 {
+  color: #6960FF;
+  padding: 0.25em 0;
+  text-align: right;
+  font-size: 36px; }
+
 p {
   font-size: 1.6em;
   color: #fff; }
