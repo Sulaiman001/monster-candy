@@ -58,8 +58,8 @@ window.addEventListener("load", function () {
         x: 50, //x coordinate
         y: 300, //y coordinate
         w: 50, //width property
-        h: 50, //height property
-        speedX: 3, //speed in X
+        h: 59, //height property
+        speedX: 4, //speed in X
         isMoving: false
     }
 
@@ -73,6 +73,7 @@ window.addEventListener("load", function () {
 
     //set levels
     var level = 1;
+    var levelCount = 1;
 
     //keep the game going
     var gameLive = true;
@@ -101,6 +102,12 @@ window.addEventListener("load", function () {
     var load = function () {
         sprites.enemy = new Image();
         sprites.enemy.src = "images/evil-candy.png";
+        
+        //add initial level number
+        var setFirstLevel = function() {
+            document.getElementById("js-levelCount").innerHTML = 1;
+        };
+        setFirstLevel();
     };
 
     //update the logic
@@ -112,6 +119,13 @@ window.addEventListener("load", function () {
 
             //increase level
             level++;
+            
+            //update level counter
+            var increaseLevel = function() {
+                //find the element on the page and insert new level
+                document.getElementById("js-levelCount").innerHTML = level;
+            }
+            increaseLevel();
 
             //set player back to the start
             player.x = 50;

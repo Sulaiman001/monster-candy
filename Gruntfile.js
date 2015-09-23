@@ -42,8 +42,7 @@ module.exports = function (grunt) {
                     sourcemap: 'none'
                 },
                 files: { // Dictionary of files
-                    'css/dist/bootstrap.css': 'bower_components/bootstrap/dist/css/bootstrap.min.css',
-                    'css/dist/main.css': 'css/src/main.scss', // 'destination': 'source'
+                    'css/dist/main.css': 'css/src/main.scss'                    
                 }
             }
         },
