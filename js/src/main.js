@@ -4,48 +4,51 @@ window.addEventListener("load", function () {
     var GAME_WIDTH = 960;
     var GAME_HEIGHT = 640;
 
+    var enemyWidth = 50;
+    var enemyHeight = 50;
+    
     //enemies
     var enemies = [
         {
             x: 150, //x coordinate
             y: 50, //y coordinate
-            w: 30, //width property
-            h: 30, //height property
+            w: enemyWidth, //width property
+            h: enemyHeight, //height property
             speedY: 2 //speed in Y
             },
         {
             x: 250, //x coordinate
             y: 550, //y coordinate
-            w: 30, //width property
-            h: 30, //height property
+            w: enemyWidth, //width property
+            h: enemyHeight, //height property
             speedY: 1 //speed in Y
             },
         {
             x: 400, //x coordinate
             y: 400, //y coordinate
-            w: 30, //width property
-            h: 30, //height property
+            w: enemyWidth, //width property
+            h: enemyHeight, //height property
             speedY: -2 //speed in Y
             },
         {
             x:570, //x coordinate
             y: 200, //y coordinate
-            w: 30, //width property
-            h: 30, //height property
+            w: enemyWidth, //width property
+            h: enemyHeight, //height property
             speedY: -2 //speed in Y
             },
         {
             x: 700, //x coordinate
             y: 550, //y coordinate
-            w: 30, //width property
-            h: 30, //height property
+            w: enemyWidth, //width property
+            h: enemyHeight, //height property
             speedY: 2 //speed in Y
             },
         {
             x: 800, //x coordinate
             y: 100, //y coordinate
-            w: 30, //width property
-            h: 30, //height property
+            w: enemyWidth, //width property
+            h: enemyHeight, //height property
             speedY: 2 //speed in Y
             }
         ]
@@ -54,8 +57,8 @@ window.addEventListener("load", function () {
     var player = {
             x: 50, //x coordinate
             y: 300, //y coordinate
-            w: 30, //width property
-            h: 30, //height property
+            w: 50, //width property
+            h: 50, //height property
             speedX: 2, //speed in X
             isMoving: false
     }
@@ -64,8 +67,8 @@ window.addEventListener("load", function () {
     var goal = {
             x: 880, //x coordinate
             y: 300, //y coordinate
-            w: 30, //width property
-            h: 30, //height property
+            w: 50, //width property
+            h: 50, //height property
     }
     
     //set levels
