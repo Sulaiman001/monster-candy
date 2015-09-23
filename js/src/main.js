@@ -4,8 +4,8 @@ window.addEventListener("load", function () {
     var GAME_WIDTH = 960;
     var GAME_HEIGHT = 640;
 
-    var enemyWidth = 50;
-    var enemyHeight = 50;
+    var enemyWidth = 65;
+    var enemyHeight = 65;
     
     //enemies
     var enemies = [
@@ -24,28 +24,28 @@ window.addEventListener("load", function () {
             speedY: 1 //speed in Y
             },
         {
-            x: 400, //x coordinate
+            x: 370, //x coordinate
             y: 400, //y coordinate
             w: enemyWidth, //width property
             h: enemyHeight, //height property
             speedY: -2 //speed in Y
             },
         {
-            x:570, //x coordinate
+            x:520, //x coordinate
             y: 200, //y coordinate
             w: enemyWidth, //width property
             h: enemyHeight, //height property
             speedY: -2 //speed in Y
             },
         {
-            x: 700, //x coordinate
+            x: 640, //x coordinate
             y: 550, //y coordinate
             w: enemyWidth, //width property
             h: enemyHeight, //height property
             speedY: 2 //speed in Y
             },
         {
-            x: 800, //x coordinate
+            x: 760, //x coordinate
             y: 100, //y coordinate
             w: enemyWidth, //width property
             h: enemyHeight, //height property
@@ -95,6 +95,13 @@ window.addEventListener("load", function () {
     canvas.addEventListener("mouseup", stopPlayer);
     canvas.addEventListener('touchstart', movePlayer);
     canvas.addEventListener('touchend', stopPlayer);
+    
+    var sprites = {};
+    
+    var load = function() {
+            sprites.enemy = new Image();
+            sprites.enemy.src = "images/evil-candy.png";
+    };
 
     //update the logic
     var update = function () {
@@ -142,8 +149,8 @@ window.addEventListener("load", function () {
             if (element.y <= 10) {
                 element.y = 10;
                 element.speedY *= -1;
-            } else if (element.y >= GAME_HEIGHT - 50) {
-                element.y = GAME_HEIGHT - 50;
+            } else if (element.y >= GAME_HEIGHT - 100) {
+                element.y = GAME_HEIGHT - 100;
                 element.speedY *= -1;
             };
         });
@@ -163,7 +170,7 @@ window.addEventListener("load", function () {
         ctx.fillStyle = ("#1C2326");
 
         enemies.forEach(function (element, index) {
-            ctx.fillRect(element.x, element.y, element.w, element.h);
+            ctx.drawImage(sprites.enemy, element.x, element.y);
         });
     };
 
@@ -188,6 +195,7 @@ window.addEventListener("load", function () {
     };
 
     //initial kick
+    load();
     step();
 
 }); //load listener
