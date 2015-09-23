@@ -5,7 +5,7 @@ window.addEventListener("load", function () {
     var GAME_HEIGHT = 640;
 
     var enemyWidth = 50;
-    var enemyHeight = 59;
+    var enemyHeight = 50;
 
     //enemies
     var enemies = [
@@ -57,8 +57,8 @@ window.addEventListener("load", function () {
     var player = {
         x: 50, //x coordinate
         y: 300, //y coordinate
-        w: 60, //width property
-        h: 60, //height property
+        w: 50, //width property
+        h: 50, //height property
         speedX: 4, //speed in X
         isMoving: false
     }
