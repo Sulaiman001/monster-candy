@@ -7,6 +7,7 @@ Try to avoid encounters with the evil candies on your quest to eat all the delic
 ##To build the environment
 
 *Clone the repo to your computer
+
 *From the command line:
   1. Run npm install
   2. Run bower install
