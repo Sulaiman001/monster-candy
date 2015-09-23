@@ -65,7 +65,7 @@ window.addEventListener("load", function () {
 
     //goal
     var goal = {
-        x: 880, //x coordinate
+        x: 860, //x coordinate
         y: 300, //y coordinate
         w: 50, //width property
         h: 50, //height property
@@ -105,6 +105,9 @@ window.addEventListener("load", function () {
         
         sprites.playerImg = new Image();
         sprites.playerImg.src = "images/baby-monster.png";
+        
+        sprites.cookie = new Image();
+        sprites.cookie.src = "images/cookie.png";
         
         //add initial level number
         var setFirstLevel = function() {
@@ -182,8 +185,7 @@ window.addEventListener("load", function () {
         ctx.drawImage(sprites.playerImg, player.x, player.y);
         
         //draw goal
-        ctx.fillStyle = ("#FFC763");
-        ctx.fillRect(goal.x, goal.y, goal.w, goal.h);
+        ctx.drawImage(sprites.cookie, goal.x, goal.y);
         
         //draw enemies
         enemies.forEach(function (element, index) {
