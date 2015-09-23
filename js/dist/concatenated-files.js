@@ -4,8 +4,8 @@ window.addEventListener("load", function () {
     var GAME_WIDTH = 960;
     var GAME_HEIGHT = 640;
 
-    var enemyWidth = 70;
-    var enemyHeight = 69;
+    var enemyWidth = 50;
+    var enemyHeight = 59;
 
     //enemies
     var enemies = [
@@ -57,8 +57,8 @@ window.addEventListener("load", function () {
     var player = {
         x: 50, //x coordinate
         y: 300, //y coordinate
-        w: 70, //width property
-        h: 69, //height property
+        w: 50, //width property
+        h: 50, //height property
         speedX: 3, //speed in X
         isMoving: false
     }
@@ -162,8 +162,8 @@ window.addEventListener("load", function () {
         ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
 
         ctx.fillStyle = ("#6960FF");
-        ctx.fillRect(player.x, player.y, player.w, player.h);
-
+        ctx.fillRect(player.x, player.y, player.w, player.h);        
+        
         ctx.fillStyle = ("#FFC763");
         ctx.fillRect(goal.x, goal.y, goal.w, goal.h);
 

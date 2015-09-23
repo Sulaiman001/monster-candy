@@ -1792,6 +1792,10 @@
 h1 {
   color: #eceb76; }
 
+p {
+  font-size: 1.6em;
+  color: #fff; }
+
 /* Base styles
    ========================================================================== */
 body {
@@ -1806,7 +1810,7 @@ canvas {
 
 main .row {
   text-align: center;
-  padding: 1.5em 0; }
+  padding: 1.5em 6em; }
 
 footer {
   margin-top: 2em;
