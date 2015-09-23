@@ -11,18 +11,18 @@ window.addEventListener("load", function () {
             y: 50, //y coordinate
             w: 30, //width property
             h: 30, //height property
-            speedY: 1 //speed in Y
-            },
-        {
-            x: 250, //x coordinate
-            y: 150, //y coordinate
-            w: 30, //width property
-            h: 30, //height property
             speedY: 2 //speed in Y
             },
         {
+            x: 250, //x coordinate
+            y: 550, //y coordinate
+            w: 30, //width property
+            h: 30, //height property
+            speedY: 1 //speed in Y
+            },
+        {
             x: 400, //x coordinate
-            y: 70, //y coordinate
+            y: 400, //y coordinate
             w: 30, //width property
             h: 30, //height property
             speedY: -2 //speed in Y
@@ -39,11 +39,11 @@ window.addEventListener("load", function () {
             y: 550, //y coordinate
             w: 30, //width property
             h: 30, //height property
-            speedY: 1 //speed in Y
+            speedY: 2 //speed in Y
             },
         {
             x: 820, //x coordinate
-            y: 300, //y coordinate
+            y: 100, //y coordinate
             w: 30, //width property
             h: 30, //height property
             speedY: 2 //speed in Y
@@ -77,9 +77,9 @@ window.addEventListener("load", function () {
     
     //event listeners for interaction
     canvas.addEventListener("mousedown", movePlayer);
-    canvas.addEventListener("mouseup", stopPlayer)
-
-
+    canvas.addEventListener("mouseup", stopPlayer);
+    canvas.addEventListener('touchstart', movePlayer);
+    canvas.addEventListener('touchend', stopPlayer);
 
     //update the logic
     var update = function () {
@@ -91,6 +91,19 @@ window.addEventListener("load", function () {
         
         //start enemies moving
         enemies.forEach(function (element, index) {
+            
+            //check for collision
+            if(checkCollision(player, element)) {
+                //stop the game
+                gameLive = false;
+                
+                alert("game over!");
+                
+                //reload page
+                window.location = "";
+            }
+            
+            //enemy speed
             element.y += element.speedY;
             
             //check for game borders and reverse speed
@@ -129,7 +142,17 @@ window.addEventListener("load", function () {
             window.requestAnimationFrame(step);
         }
     };
+    
+    
+    //check the collision between two rectangles
+    var checkCollision = function (rect1, rect2) {
 
+        var closeOnWidth = Math.abs(rect1.x - rect2.x) <= Math.max(rect1.w, rect2.w);
+        var closeOnHeight = Math.abs(rect1.y - rect2.y) <= Math.max(rect1.h, rect2.h);
+        return closeOnWidth && closeOnHeight;
+    };
+
+    //initial kick
     step();
 
 }); //load listener
