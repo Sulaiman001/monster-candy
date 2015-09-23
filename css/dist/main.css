@@ -1807,16 +1807,19 @@ p {
 body {
   background: #58D4E8; }
 
+@media only screen and (min-width: 1025px) {
+  .container-fluid {
+    max-width: 1024px; } }
 header {
   padding: 1em 0; }
 
 canvas {
   border: 1px solid #58D4E8;
-  background: #fff; }
+  background: #fff;
+  padding: 0.5em 0; }
 
 main .row {
-  text-align: center;
-  padding: 1.5em 6em; }
+  text-align: center; }
 
 footer {
   margin-top: 2em;
