@@ -14,29 +14,43 @@ window.addEventListener("load", function () {
     //enemies
     var enemies = [
         {
-            x: 100, //x coordinate
+            x: 130, //x coordinate
             y: 50, //y coordinate
             w: 30, //width property
             h: 30, //height property
-            speedY: 2 //speed in Y
+            speedY: 1 //speed in Y
             },
         {
-            x: 200, //x coordinate
-            y: 200, //y coordinate
+            x: 250, //x coordinate
+            y: 450, //y coordinate
             w: 30, //width property
             h: 30, //height property
             speedY: 2 //speed in Y
             },
         {
-            x: 320, //x coordinate
+            x: 400, //x coordinate
+            y: 450, //y coordinate
+            w: 30, //width property
+            h: 30, //height property
+            speedY: -2 //speed in Y
+            },
+        {
+            x:570, //x coordinate
             y: 100, //y coordinate
             w: 30, //width property
             h: 30, //height property
             speedY: 2 //speed in Y
             },
         {
-            x: 450, //x coordinate
-            y: 20, //y coordinate
+            x: 700, //x coordinate
+            y: 550, //y coordinate
+            w: 30, //width property
+            h: 30, //height property
+            speedY: -1 //speed in Y
+            },
+        {
+            x: 820, //x coordinate
+            y: 550, //y coordinate
             w: 30, //width property
             h: 30, //height property
             speedY: 2 //speed in Y
@@ -54,7 +68,7 @@ window.addEventListener("load", function () {
 
     //draw
     var draw = function () {
-        ctx.clearRect(0, 0, GAME_HEIGHT, GAME_WIDTH);
+        ctx.clearRect(0, 0, GAME_WIDTH, GAME_HEIGHT);
         ctx.fillStyle = ("#1C2326");
 
         enemies.forEach(function (element, index) {
