@@ -68,9 +68,13 @@ window.addEventListener("load", function () {
             h: 30, //height property
     }
     
-        //keep the game going
+    //set levels
+    var level = 1;
+    
+    //keep the game going
     var gameLive = true;
     
+    //basic player movement setup
     var movePlayer = function() {
         player.isMoving = true;
     };
@@ -92,6 +96,23 @@ window.addEventListener("load", function () {
     //update the logic
     var update = function () {
         
+        //check if you've won the game
+        
+        if(checkCollision(player, goal)) {
+            
+            //increase level
+            level++;
+            
+            //set player back to the start
+            player.x = 50;
+            
+            //increase the speed of the enemies by 1
+            enemies.forEach(function (element, index) {
+                element.speedY += element.speedY / Math.abs(element.speedY);
+            });
+            
+        };
+        
         //player speed
         if(player.isMoving) {
             player.x = player.x + player.speedX 
@@ -109,7 +130,7 @@ window.addEventListener("load", function () {
                 
                 //reload page
                 window.location = "";
-            }
+            };
             
             //enemy speed
             element.y += element.speedY;
@@ -121,7 +142,7 @@ window.addEventListener("load", function () {
             } else if (element.y >= GAME_HEIGHT - 50) {
                 element.y = GAME_HEIGHT - 50;
                 element.speedY *= -1;
-            }
+            };
         });
 
     };
