@@ -42,7 +42,7 @@ window.addEventListener("load", function () {
             speedY: 2 //speed in Y
             },
         {
-            x: 820, //x coordinate
+            x: 800, //x coordinate
             y: 100, //y coordinate
             w: 30, //width property
             h: 30, //height property
@@ -58,6 +58,14 @@ window.addEventListener("load", function () {
             h: 30, //height property
             speedX: 2, //speed in X
             isMoving: false
+    }
+    
+    //goal
+    var goal = {
+            x: 880, //x coordinate
+            y: 300, //y coordinate
+            w: 30, //width property
+            h: 30, //height property
     }
     
         //keep the game going
@@ -124,6 +132,9 @@ window.addEventListener("load", function () {
         
         ctx.fillStyle = ("#6960FF");
         ctx.fillRect(player.x, player.y, player.w, player.h);
+        
+        ctx.fillStyle = ("#FFC763");
+        ctx.fillRect(goal.x, goal.y, goal.w, goal.h);
         
         ctx.fillStyle = ("#1C2326");
 
