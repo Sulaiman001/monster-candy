@@ -4,13 +4,6 @@ window.addEventListener("load", function () {
     var GAME_WIDTH = 960;
     var GAME_HEIGHT = 640;
 
-    //grab the canvas and context
-    var canvas = document.getElementById("myCanvas");
-    var ctx = canvas.getContext("2d");
-
-    //keep the game going
-    var gameLive = true;
-
     //enemies
     var enemies = [
         {
@@ -63,12 +56,40 @@ window.addEventListener("load", function () {
             y: 300, //y coordinate
             w: 30, //width property
             h: 30, //height property
-            speedX: 2 //speed in X
+            speedX: 2, //speed in X
+            isMoving: false
     }
+    
+        //keep the game going
+    var gameLive = true;
+    
+    var movePlayer = function() {
+        player.isMoving = true;
+    };
+    
+    var stopPlayer = function() {
+        player.isMoving = false;
+    };
+    
+    //grab the canvas and context
+    var canvas = document.getElementById("myCanvas");
+    var ctx = canvas.getContext("2d");
+    
+    //event listeners for interaction
+    canvas.addEventListener("mousedown", movePlayer);
+    canvas.addEventListener("mouseup", stopPlayer)
+
+
 
     //update the logic
     var update = function () {
-
+        
+        //player speed
+        if(player.isMoving) {
+            player.x = player.x + player.speedX 
+        };
+        
+        //start enemies moving
         enemies.forEach(function (element, index) {
             element.y += element.speedY;
             
